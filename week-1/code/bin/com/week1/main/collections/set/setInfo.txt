@@ -1,0 +1,5 @@
+Set Interface'ini implemente eden classlar :
+    Bir elemanı sadece bir defa depolar.
+    Bir elemanın sadece bir defa depolanmasını istiyorsak Listler yerine kullanılabilir.
+    Elemanlar listler gibi indekslenmezler.
+    Bir elemanı setlerde olup olmadığını sorgulama listlere göre oldukça hızlıdır.

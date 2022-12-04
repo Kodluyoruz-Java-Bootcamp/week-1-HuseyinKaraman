@@ -1,0 +1,6 @@
+Veriler Anahtar Değer ilişkisiyle depolanır.
+    Bir key'e karşılık gelen yalnızca bir değer bulunur.
+    Bir key birden fazla bulunamaz.
+    Bir değere bir key üzerinden erişmek çok hızlıdır.
+    Değerlerin üzerinde tek tek gezinmek çok yavaştır.(direk iterable interface'i implemente edilmemiş)
+    Eğer kendi objelerimizi maplerde kullanmak istiyorsak hashCode() ve equals() metodlarını override etmeliyiz.
