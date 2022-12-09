@@ -9,7 +9,31 @@ import java.util.stream.Collectors;
 
 public class ECommerceSystem {
 
+	/** @Note: perşembe gunu discord'da yapılan duzenleme : */
+	public static void run2() {
+		ECommerceSystem eCommerceSystem = new ECommerceSystem();
 
+		List<Product> productList = eCommerceSystem.createProductList(); // Products
+		List<Order> orders = eCommerceSystem.createOrders(productList); // Orders
+		List<Customer> customerList = eCommerceSystem.createCustomers(orders); // Customers
+
+		// İsmi Cem olan müşterilerin aldıkları ürün sayısını bul
+		Integer totalProduct = customerList.stream().filter(it -> it.getName().equals("Cem"))
+				.map(it -> it.getOrders())
+				.flatMap(Collection::stream)
+				.map(it -> it.getProducts().size())
+				.reduce(0, Integer::sum);
+
+		Integer reduce = customerList.stream().filter(it -> it.getName().equals("Cem"))
+				.map(it -> it.getOrders())
+				.flatMap(Collection::stream)
+				.map(it -> it.getProducts().size())
+				.reduce(0, (sum, it) -> sum + it);
+
+		System.out.println(totalProduct);
+		System.out.println(reduce);
+	}
+	
 	public static void run() {
 		ECommerceSystem eCommerceSystem = new ECommerceSystem();
 
